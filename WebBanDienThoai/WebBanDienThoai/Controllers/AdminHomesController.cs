@@ -12,7 +12,7 @@ namespace WebBanDienThoai.Controllers
     public class AdminHomesController : Controller
     {
         // GET: AdminHomes
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
         public ActionResult Edit(int? id)
         {
             var listcate = db.Categories.Where(x => x.Status == true);

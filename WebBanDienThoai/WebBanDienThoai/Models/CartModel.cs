@@ -12,7 +12,6 @@ namespace WebBanDienThoai.Models
     {
 
         public Product Product { get; set; }
-
         public int Quanlity { get; set; }
 
     }

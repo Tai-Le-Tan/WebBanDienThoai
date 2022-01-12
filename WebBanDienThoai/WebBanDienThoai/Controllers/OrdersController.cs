@@ -12,7 +12,7 @@ namespace WebBanDienThoai.Controllers
 {
     public class OrdersController : Controller
     {
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
         public ActionResult Index(int? page, string q)
         {
             var count_order = (from or in db.Orders select or.orderID).Count();

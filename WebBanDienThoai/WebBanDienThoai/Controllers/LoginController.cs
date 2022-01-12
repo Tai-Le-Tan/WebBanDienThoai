@@ -10,7 +10,7 @@ namespace WebBanDienThoai.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
         public ActionResult LoginAccount()
         {
             return View();
@@ -20,41 +20,63 @@ namespace WebBanDienThoai.Controllers
         public ActionResult LoginAccount(string email, string password)
         {
 
-            var loginKh = db.Customers.SingleOrDefault(x => x.Email == email && x.Password == password && x.Status == true);
+            var loginKh = db.Customers.SingleOrDefault(x => x.Email == email && x.Password == password);
             //Md5Encode md5 = new Md5Encode();
             //var passmd5 = md5.EncodeMd5Encrypt(password);
-            var login = db.Users.SingleOrDefault(x => x.Email == email && x.Password == password && x.Status == true);
+
+            var login = db.Users.SingleOrDefault(x => x.Email == email && x.Password == password);
+
+
+
 
             if (login != null)
             {
+                if (login.Status == true)
+                {
+
+                    Session["UserID"] = login.UserID;
+                    Session["Username"] = login.Username;
+                    Session["Email"] = login.Email;
+                    Session["Password"] = login.Password;
+                    Session["Image"] = login.Image;
+                    Session["role"] = login.Role;
+                    return Redirect("~/AdminHome/Index");
+                }
+                else
+                {
+                    ViewBag.error1 = "Tài khoản bị khóa";
+                }
 
 
-                Session["UserID"] = login.UserID;
-                Session["Username"] = login.Username;
-                Session["Email"] = login.Email;
-                Session["Password"] = login.Password;
-                Session["Image"] = login.Image;
-                return Redirect("~/AdminHome/Index");
+
+
 
 
             }
-            else
-
-            if (loginKh != null)
+            else if (loginKh != null)
             {
-                Session["customerID"] = loginKh.customerID;
-                Session["customerName"] = loginKh.customerName;
-                Session["Email"] = loginKh.Email;
-                Session["Password"] = loginKh.Password;
+                if (loginKh.Status == true)
+                {
 
-                return Redirect("~/Home/Index");
+                    Session["customerID"] = loginKh.customerID;
+                    Session["customerName"] = loginKh.customerName;
+                    Session["Email"] = loginKh.Email;
+                    Session["Password"] = loginKh.Password;
+
+                    return Redirect("~/Home/Index");
+                }
+                else
+                {
+                    ViewBag.error1 = "Tài khoản bị khóa";
+                }
             }
 
             else
             {
 
-                ViewBag.error = "Tên Tài Khoản Hoặc Mật Khẩu Không Đúng";
+                ViewBag.error = "Tài khoản hoặc mật khẩu sai";
             }
+
 
             return View();
         }

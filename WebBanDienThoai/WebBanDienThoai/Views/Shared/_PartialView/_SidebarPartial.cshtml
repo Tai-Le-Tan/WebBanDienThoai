@@ -39,13 +39,13 @@
                 <i class="menu-icon fa fa-briefcase" aria-hidden="true"></i>
                 <span class="menu-text">
                     Đơn hàng
-                        <span class="badge badge-primary">@Session["countnewcart"]</span>
+                    <span class="badge badge-primary">@Session["countnewcart"]</span>
                 </span>
             </a>
 
             <b class="arrow"></b>
-                </li>
-            
+        </li>
+
 
         <li class="">
             <a href="#" class="dropdown-toggle">
@@ -83,7 +83,7 @@
             <a href="~/Customers">
                 <i class="menu-icon fa fa-users" aria-hidden="true"></i>
                 <span class="menu-text"> Khách hàng </span>
-                
+
             </a>
             <b class="arrow"></b>
         </li>
@@ -127,7 +127,7 @@
                 <li class="">
                     <a href="/Slides">
                         <i class="menu-icon fa fa-caret-right"></i>
-                       Quản lí Slide
+                        Quản lí Slide
                     </a>
 
                     <b class="arrow"></b>
@@ -135,49 +135,97 @@
 
 
 
-              </ul>
-</li>
+            </ul>
+        </li>
 
-    <li class="">
-        <a href="#" class="dropdown-toggle">
-            <i class="menu-icon fa fa-user" aria-hidden="true"></i>
-            <span class="menu-text"> Danh sách quản trị </span>
+        <li class="">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-user" aria-hidden="true"></i>
+                <span class="menu-text"> Danh sách quản trị </span>
 
-            <b class="arrow fa fa-angle-down"></b>
-        </a>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
 
-        <b class="arrow"></b>
+            <b class="arrow"></b>
 
-        <ul class="submenu">
-            <li class="">
-                <a href="~/Users">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Quản trị viên
-                </a>
+            <ul class="submenu">
+                <li class="">
+                    <a href="~/Users">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Quản trị viên
+                    </a>
 
-                <b class="arrow"></b>
-            </li>
-            <li class="">
-                <a href="~/Admin/UserBusinesses">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Phân quyền
-                </a>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <a href="~/Admin/UserBusinesses">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Phân quyền
+                    </a>
 
-                <b class="arrow"></b>
-            </li>
+                    <b class="arrow"></b>
+                </li>
 
 
-        </ul>
-    </li>
+            </ul>
+        </li>
+        <li class="">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-user" aria-hidden="true"></i>
+                <span class="menu-text"> Quản lý danh thu </span>
 
-    <li class="">
-        <a href="/Configures/Edit/1">
-            <i class="menu-icon fa fa-cogs" aria-hidden="true"></i>
-            <span class="menu-text"> Cấu hình chung </span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
 
-        </a>
-        <b class="arrow"></b>
-    </li>
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+                <li class="">
+                    <a href="/Report/Index">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Báo Cáo
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <a href="/Turnover/DoanhThu">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Doanh thu
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+
+            </ul>
+        </li>
+
+        <li class="">
+            <a href="/Configures/Edit/1">
+                <i class="menu-icon fa fa-cogs" aria-hidden="true"></i>
+                <span class="menu-text"> Cấu hình chung </span>
+
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <li class="">
+            <a href="/News/Index">
+                
+                <i class="menu-icon fa fa-cogs" aria-hidden="true"></i>
+                <span class="menu-text"> Tin tức </span>
+
+            </a>
+            <b class="arrow"></b>
+        </li>
+        <li class="">
+            <a href="/Voucher/Index">
+                <i class="menu-icon fa fa-cogs" aria-hidden="true"></i>
+                <span class="menu-text"> Voucher </span>
+
+            </a>
+            <b class="arrow"></b>
+        </li>
 
     </ul><!-- /.nav-list -->
 

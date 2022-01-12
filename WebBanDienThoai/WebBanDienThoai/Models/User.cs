@@ -13,7 +13,6 @@ namespace WebBanDienThoai.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-
     public partial class User
     {
         public int UserID { get; set; }
@@ -55,5 +54,14 @@ namespace WebBanDienThoai.Models
         public Nullable<System.DateTime> CreatedAt { get; set; }
         [Display(Name = "Trạng Thái")]
         public bool Status { get; set; }
+        [Required(ErrorMessage = "Quyền Không Được Bỏ Trống")]
+        [Display(Name = "Quyền")]
+        public Nullable<int> Role { get; set; }
+        public enum RoleAdmin
+        {
+           Admin,
+            Sales,
+            Warehouse
+        }
     }
 }

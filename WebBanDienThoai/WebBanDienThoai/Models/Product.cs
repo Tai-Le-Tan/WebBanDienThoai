@@ -9,6 +9,7 @@
 
 namespace WebBanDienThoai.Models
 {
+
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -20,8 +21,8 @@ namespace WebBanDienThoai.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            this.ImageProducts = new HashSet<ImageProduct>();
-            this.OrderDetails = new HashSet<OrderDetail>();
+            this.ImageProduct = new HashSet<ImageProduct>();
+            this.OrderDetail = new HashSet<OrderDetail>();
         }
 
         public int ProductID { get; set; }
@@ -64,11 +65,14 @@ namespace WebBanDienThoai.Models
         public Nullable<System.DateTime> CreatedAt { get; set; }
         [Display(Name = "Trạng Thái")]
         public bool Status { get; set; }
+        [DisplayFormat(DataFormatString = "{0:0,0₫}")]
+        [Display(Name = "Giá gốc sản phẩm")]
+        public Nullable<decimal> PriceIn { get; set; }
 
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ImageProduct> ImageProducts { get; set; }
+        public virtual ICollection<ImageProduct> ImageProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
     }
 }

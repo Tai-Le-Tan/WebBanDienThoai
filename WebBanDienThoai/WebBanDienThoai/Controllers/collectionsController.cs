@@ -11,7 +11,7 @@ namespace WebBanDienThoai.Controllers
 {
     public class collectionsController : Controller
     {
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
 
         // GET: Category
         public ActionResult CollectionAll(int? page)
@@ -65,5 +65,6 @@ namespace WebBanDienThoai.Controllers
 
             return View(listmol.ToPagedList(pageNumber, pagesize));
         }
+
     }
 }

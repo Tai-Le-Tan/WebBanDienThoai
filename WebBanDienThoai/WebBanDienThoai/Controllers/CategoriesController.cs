@@ -8,13 +8,17 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebBanDienThoai.Models;
+using System.Web.Script.Serialization;
 
 namespace WebBanDienThoai.Controllers
 {
     public class CategoriesController : Controller
     {
+       
         // GET: Categories
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
+
+        
         // GET: Admin/Categories
         public ActionResult Index(int? page, string q)
         {
@@ -36,7 +40,7 @@ namespace WebBanDienThoai.Controllers
             }
 
             ViewBag.keyword_search = q;
-
+/*            TempData["msg1"] = "<script>alert('Bạn không có quyền truy cập trang này');</script>";*/
             return View(model.ToPagedList(pageNumber, pagesize));
         }
 

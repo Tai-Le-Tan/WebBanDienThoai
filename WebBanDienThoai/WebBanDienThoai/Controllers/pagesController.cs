@@ -9,7 +9,7 @@ namespace WebBanDienThoai.Controllers
 {
     public class pagesController : Controller
     {
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
         // GET: pages
         public ActionResult GetPageID(int MenuID, string MenuName)
         {

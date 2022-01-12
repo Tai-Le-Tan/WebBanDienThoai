@@ -10,7 +10,7 @@ namespace WebBanDienThoai.Controllers
     public class AdminHomeController : Controller
     {
         // GET: AdminHome
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
         public ActionResult Index()
         {
             var count_user = (from pro in db.Users select pro.UserID).Count();
@@ -41,6 +41,7 @@ namespace WebBanDienThoai.Controllers
             Session["Username"] = null;
             Session["Password"] = null;
             Session["Image"] = null;
+            Session["role"] = null;
             return Redirect("~/Login/LoginAccount");
         }
 

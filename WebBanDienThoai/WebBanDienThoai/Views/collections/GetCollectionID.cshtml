@@ -65,7 +65,16 @@
                         <span>list</span>
                     </li>
                 </ul>
-
+                <span>Lọc giá: </span>
+                <select id="sort">
+                    <option data-price="0:@Int64.MaxValue" value="all">Tất cả</option>
+                    <option data-price="0:5000000" value="1">0₫ - 5,000,000₫</option>
+                    <option data-price="5000001:10000000" value="2">5,000,001₫ - 10,000,000₫</option>
+                    <option data-price="10000001:20000000" value="3">10,000,001₫ - 20,000,000₫</option>
+                    <option data-price="20000001:30000000" value="4">20,000,001₫ - 30,000,000₫</option>
+                    <option data-price="30000001:40000000" value="5">30,000,001₫ - 40,000,000₫</option>
+                    <option data-price="40000001:@Int64.MaxValue" value="6">40,000,000₫ trở lên</option>
+                </select>
             </div>
         </div>
     </div>
@@ -80,7 +89,7 @@
 
                                 @foreach (var item in Model)
                                 {
-                                    <li class="item_product col-md-3 col-sm-3 col-xs-6">
+                                    <li class="item_product col-md-3 col-sm-3 col-xs-6" data-productprice="@item.Price">
                                         <div class="pdLoopItem animated zoomIn">
                                             <div class="itemLoop clearfix">
                                                 <div class="pdLoopImg imageHovers">
@@ -137,5 +146,28 @@
             </div>
         </div>
     </div>
+
 </section>
+<script>
+    $(function () {
+
+        var $cards = $("#pd_collection").find("[data-productprice]");
+        $("#sort").change(function () {
+            var t = $(this).find(':selected').data('price');
+            var a = t.split(':');
+            var l = parseFloat(a[0]);
+            var u = parseFloat(a[1]);
+
+            $.each($cards, function (a, b) {
+                var p = parseFloat($(b).data("productprice"));
+                if (p >= l && p <= u) {
+                    $(b).show();
+                } else {
+                    $(b).hide();
+                }
+            });
+
+        });
+
+    });</script>
 

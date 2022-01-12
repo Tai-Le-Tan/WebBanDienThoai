@@ -25,15 +25,31 @@
         </head>
 
         <body class="no-skin">
+
             @RenderPage("_PartialView/_TopbarPartial.cshtml")
 
             <div class="main-container ace-save-state" id="main-container">
                 <script type="text/javascript">
-				try{ace.settings.loadState('main-container')}catch(e){}
+                    try { ace.settings.loadState('main-container') } catch (e) { }
                 </script>
 
                 @*Render Silder *@
-                @RenderPage("_PartialView/_SidebarPartial.cshtml")
+
+                @if (Convert.ToInt32(Session["role"]) == 1)
+                {
+
+                    @RenderPage("_PartialView/_SidebarAdminPartial.cshtml")
+                }
+                else if (Convert.ToInt32(Session["role"]) == 3)
+                {
+                    @RenderPage("_PartialView/_SidebarKDPartial.cshtml")
+                }
+                else
+                {
+                    @RenderPage("_PartialView/_SidebarKhoPartial.cshtml")
+                }
+
+
 
                 @*End Render Silder *@
                 <div class="main-content">

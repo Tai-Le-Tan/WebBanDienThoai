@@ -68,39 +68,40 @@
 
                                                 @using (Html.BeginForm("LoginAccount", "Login"))
                                                 {
-                                                    <fieldset>
-                                                        <p style="color:red;text-align:center;font-weight:bold;text-transform: uppercase;">@ViewBag.error</p>
-                                                        <label class="block clearfix">
-                                                            <span class="block input-icon input-icon-right">
+                                            <fieldset>
+                                                <p style="color:red;text-align:center;font-weight:bold;text-transform: uppercase;">@ViewBag.error1</p>
+                                                <p style="color:red;text-align:center;font-weight:bold;text-transform: uppercase;">@ViewBag.error</p>
+                                                <label class="block clearfix">
+                                                    <span class="block input-icon input-icon-right">
 
 
-                                                                @Html.TextBox("email", null, new { @class = "form-control", placeholder = "Username" })
-                                                                <i class="ace-icon fa fa-user"></i>
-                                                            </span>
-                                                        </label>
+                                                        @Html.TextBox("email", null, new { @class = "form-control", placeholder = "Username" })
+                                                        <i class="ace-icon fa fa-user"></i>
+                                                    </span>
+                                                </label>
 
-                                                        <label class="block clearfix">
-                                                            <span class="block input-icon input-icon-right">
-                                                                @Html.Password("password", null, new { @class = "form-control", placeholder = "Password" })
-                                                                <i class="ace-icon fa fa-lock"></i>
-                                                            </span>
-                                                        </label>
+                                                <label class="block clearfix">
+                                                    <span class="block input-icon input-icon-right">
+                                                        @Html.Password("password", null, new { @class = "form-control", placeholder = "Password" })
+                                                        <i class="ace-icon fa fa-lock"></i>
+                                                    </span>
+                                                </label>
 
-                                                        <div class="space"></div>
+                                                <div class="space"></div>
 
-                                                        <div class="clearfix">
-                                                            <label class="inline">
-                                                                <input type="checkbox" class="ace" name="remember_me" id="remember_me" />
-                                                                <span class="lbl"> Remember Me</span>
-                                                            </label>
-                                                            <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
-                                                                <i class="ace-icon fa fa-key"></i>
-                                                                <span class="bigger-110">Login</span>
-                                                            </button>
-                                                        </div>
+                                                <div class="clearfix">
+                                                    <label class="inline">
+                                                        <input type="checkbox" class="ace" name="remember_me" id="remember_me" />
+                                                        <span class="lbl"> Remember Me</span>
+                                                    </label>
+                                                    <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                                                        <i class="ace-icon fa fa-key"></i>
+                                                        <span class="bigger-110">Login</span>
+                                                    </button>
+                                                </div>
 
-                                                        <div class="space-4"></div>
-                                                    </fieldset>
+                                                <div class="space-4"></div>
+                                            </fieldset>
                                                 }
 
                                                 <div class="social-or-login center">

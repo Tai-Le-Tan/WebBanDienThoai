@@ -19,14 +19,9 @@ namespace WebBanDienThoai.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Category()
         {
-            this.Products = new HashSet<Product>();
+            this.Product = new HashSet<Product>();
         }
 
-        public int CategoryID { get; set; }
-        [Display(Name = "Tên Nhóm Sản Phẩm")]
-        [Required(ErrorMessage = "Tên Nhóm Sản Phẩm Không Được Bỏ Trống")]
-        [MaxLength(250, ErrorMessage = "Tên Nhóm Sản Phẩm  Không Được Vượt Quá 250 Kí Tự")]
-        public string CategoryName { get; set; }
         [Display(Name = "Đường Dẫn URL")]
         [Required(ErrorMessage = "URL Không Được Bỏ Trống")]
         [MaxLength(250, ErrorMessage = "URL Không Được Vượt Quá 250 Kí Tự")]
@@ -41,8 +36,14 @@ namespace WebBanDienThoai.Models
         public Nullable<System.DateTime> CreatedAt { get; set; }
         [Display(Name = "Trạng Thái")]
         public bool Status { get; set; }
+        public int CategoryID { get; set; }
+        [Display(Name = "Tên Nhóm Sản Phẩm")]
+        [Required(ErrorMessage = "Tên Nhóm Sản Phẩm Không Được Bỏ Trống")]
+        [MaxLength(250, ErrorMessage = "Tên Nhóm Sản Phẩm  Không Được Vượt Quá 250 Kí Tự")]
+        public string CategoryName { get; set; }
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

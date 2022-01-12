@@ -9,11 +9,11 @@ namespace WebBanDienThoai.Models
 {
     public class ProductCart
     {
-        WEBBANDIENTHOAIEntities db = null;
+        WebMobileEntities db = null;
 
         public ProductCart()
         {
-            db = new WEBBANDIENTHOAIEntities();
+            db = new WebMobileEntities();
         }
         public Product ViewDetail(int ProductID)
         {

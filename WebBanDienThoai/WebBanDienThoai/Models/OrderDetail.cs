@@ -29,7 +29,6 @@ namespace WebBanDienThoai.Models
         public decimal TotalProduct { get; set; }
         [Display(Name = "Trạng Thái")]
         public bool Status { get; set; }
-        // ý t là giờ m mua cái đơn mới coi nó ra k 
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
     }

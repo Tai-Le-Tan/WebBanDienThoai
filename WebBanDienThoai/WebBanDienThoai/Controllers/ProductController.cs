@@ -9,7 +9,7 @@ namespace WebBanDienThoai.Controllers
 {
     public class ProductController : Controller
     {
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
         // GET: Product
         public ActionResult Index()
         {

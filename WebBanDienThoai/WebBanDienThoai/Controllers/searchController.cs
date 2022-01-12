@@ -10,7 +10,7 @@ namespace WebBanDienThoai.Controllers
 {
     public class searchController : Controller
     {
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
         // GET: search
         public ActionResult Index(int? page, string q)
         {

@@ -10,7 +10,7 @@ namespace WebBanDienThoai.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
         public ActionResult Index()
         {
             //Nhóm sản phẩm Index 1

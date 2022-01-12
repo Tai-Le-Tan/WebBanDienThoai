@@ -12,7 +12,7 @@ namespace WebBanDienThoai.Controllers
     public class cartController : Controller
     {
         // GET: cart
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
 
         public ActionResult Index()
         {
@@ -78,8 +78,6 @@ namespace WebBanDienThoai.Controllers
 
         }
 
-
-
         public JsonResult UpdateCart(string CartModels)
         {
             var JsonCart = new JavaScriptSerializer().Deserialize<List<CartModel>>(CartModels);
@@ -98,7 +96,7 @@ namespace WebBanDienThoai.Controllers
                     }
                     else
                     {
-                        TempData["msg"] = "<script>alert('Loi roi');</script>";
+                        TempData["msg"] = "<script>alert('Số lượng sản phẩm không đủ');</script>";
                     }
 
 

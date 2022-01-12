@@ -14,7 +14,7 @@ namespace WebBanDienThoai.Controllers
     public class ProductsController : Controller
     {
 
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
         // GET: Admin/Products
         public ActionResult Index(int? page, string q)
         {
@@ -108,7 +108,7 @@ namespace WebBanDienThoai.Controllers
 
 
 
-                    product.ImageProducts = fileDetails;
+                    product.ImageProduct = fileDetails;
                     db.Products.Add(product);
                     db.SaveChanges();
                     return RedirectToAction("Index");
@@ -222,7 +222,7 @@ namespace WebBanDienThoai.Controllers
 
             Product product = db.Products.Find(id);
 
-            foreach (var item in product.ImageProducts)
+            foreach (var item in product.ImageProduct)
             {
                 String path = Path.Combine(Server.MapPath("~/Upload/Images"), item.ImageProductID + item.FileImages);
                 if (System.IO.File.Exists(path))

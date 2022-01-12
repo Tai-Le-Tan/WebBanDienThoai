@@ -11,7 +11,7 @@ namespace WebBanDienThoai.Controllers
 {
     public class CustomersController : Controller
     {
-        private WEBBANDIENTHOAIEntities db = new WEBBANDIENTHOAIEntities();
+        private WebMobileEntities db = new WebMobileEntities();
         // GET: Customers
 
         public ActionResult Index(int? page, string q)

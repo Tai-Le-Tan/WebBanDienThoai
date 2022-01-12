@@ -19,7 +19,7 @@ namespace WebBanDienThoai.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
-            this.Orders = new HashSet<Order>();
+            this.Order = new HashSet<Order>();
         }
 
         public int customerID { get; set; }
@@ -28,7 +28,7 @@ namespace WebBanDienThoai.Models
         [Required(ErrorMessage = "Họ Tên Không Được Bỏ Trống")]
         [MaxLength(50, ErrorMessage = "Họ Tên Không Được Vượt Quá 50 Kí Tự")]
         public string customerName { get; set; }
-        
+
 
         [Display(Name = "Email")]
         [Column(TypeName = "varchar")]
@@ -40,7 +40,7 @@ namespace WebBanDienThoai.Models
         [Display(Name = "Mật Khẩu")]
         [MaxLength(250, ErrorMessage = "Mật Khẩu Không Được Vượt Quá 250 Kí Tự")]
         [Column(TypeName = "varchar")]
-      //  [DataType(DataType.Password)]
+
         public string Password { get; set; }
         [Required(ErrorMessage = "Địa Chỉ Không Được Bỏ Trống")]
         [Display(Name = "Địa Chỉ")]
@@ -55,13 +55,15 @@ namespace WebBanDienThoai.Models
         public Nullable<System.DateTime> CreatedAt { get; set; }
         [NotMapped]
 
-       
+        [Compare("Password")]
         [Display(Name = "Nhập lại Mật Khẩu")]
         public string ComfirmPass { get; set; }
         [Display(Name = "Trạng Thái")]
         public bool Status { get; set; }
+        public Nullable<int> IdVoucher { get; set; }
 
+        public virtual Voucher Voucher { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
     }
 }
